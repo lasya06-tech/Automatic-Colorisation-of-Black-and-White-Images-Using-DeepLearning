@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Colorization</title>
+</head>
+<body>
+    <h1>Black & White Image Colorization</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <button type="submit">Upload & Colorize</button>
+    </form>
+
+    {% if uploaded_image %}
+        <h2>Original</h2>
+        <img src="{{ uploaded_image }}" width="300">
+    {% endif %}
+
+    {% if result_image %}
+        <h2>Colorized</h2>
+        <img src="{{ result_image }}" width="300">
+    {% endif %}
+</body>
+</html>
