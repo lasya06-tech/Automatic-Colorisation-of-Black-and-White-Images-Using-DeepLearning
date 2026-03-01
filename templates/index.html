@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Image Colorization</title>
+    <title>AI Image Colorizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Black & White Image Colorization</h1>
 
-    <form method="POST" enctype="multipart/form-data">
-        <input type="file" name="image" required>
-        <button type="submit">Upload & Colorize</button>
-    </form>
+    <div class="container">
 
-    {% if uploaded_image %}
-        <h2>Original</h2>
-        <img src="{{ uploaded_image }}" width="300">
-    {% endif %}
+        <h1>🎨 AI Image Colorizer</h1>
+        <p class="subtitle">Transform Black & White Images into Color using Deep Learning</p>
 
-    {% if result_image %}
-        <h2>Colorized</h2>
-        <img src="{{ result_image }}" width="300">
-    {% endif %}
+        <form method="POST" enctype="multipart/form-data" class="upload-form">
+            <input type="file" name="image" required>
+            <button type="submit">Colorize Image</button>
+        </form>
+
+        {% if uploaded_image %}
+        <div class="image-section">
+
+            <div class="image-card">
+                <h3>Original Image</h3>
+                <img src="{{ uploaded_image }}" alt="Uploaded Image">
+            </div>
+
+            <div class="image-card">
+                <h3>Colorized Image</h3>
+                <img src="{{ result_image }}" alt="Result Image">
+            </div>
+
+        </div>
+        {% endif %}
+
+    </div>
+
 </body>
 </html>

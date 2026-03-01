@@ -22,3 +22,10 @@ class BaseColor(nn.Module):
 	def unnormalize_ab(self, in_ab):
 		return in_ab*self.ab_norm
 
+
+#new
+
+
+
+
+

@@ -103,3 +103,4 @@ def eccv16(pretrained=True):
 		import torch.utils.model_zoo as model_zoo
 		model.load_state_dict(model_zoo.load_url('https://colorizers.s3.us-east-2.amazonaws.com/colorization_release_v2-9b330a0b.pth',map_location='cpu',check_hash=True))
 	return model
+#new
